@@ -1,6 +1,7 @@
 import pkgutil
 import importlib
 
+
 __all__ = []
 
 
@@ -10,7 +11,7 @@ def _import_modules():
 		assert not isPkg
 		moduleNameWithoutPrefix = moduleName[prefixLen:]
 		__all__.append(moduleNameWithoutPrefix)
-		module = importlib.import_module('snscrape.modules.' + moduleName)
+		module = importlib.import_module(moduleName)
 		globals()[moduleNameWithoutPrefix] = module
 
 
